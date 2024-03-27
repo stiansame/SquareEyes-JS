@@ -211,6 +211,22 @@ main h1,
 
 /*Universal ends here!*/
 
+
+/* JS related*/
+
+.message {
+  padding: 1rem;
+  border: grey solid 2px;
+  color: grey;
+}
+
+.error {
+  color: red;
+  border-color: red;
+  background: #e6eef2;
+}
+
+
 /*Navbar starts here!*/
 
 .logo {
