@@ -1,4 +1,4 @@
-//Imports to make the API-cal wotk
+//Imports to make the API-cal work
 import { ResultsContainer } from "../script.js";
 import { message } from "../script.js";
 import { url } from "../script.js";
@@ -7,19 +7,18 @@ import { url } from "../script.js";
 export async function getMovies() {
   try {
     const response = await fetch(url);
-
-    const results = await response.json();
-
-    const title = results.data;
+    const json = await response.json();
 
     ResultsContainer.innerHTML = "";
 
-    for (let i = 0; i < title.length; i++) {
-      console.log("Success!");
+    const movies = json.data;
+    console.log(movies);
+
+    movies.forEach(function (movie) {
       ResultsContainer.innerHTML += `<div class="movie">
-                                  <a href ="../pages/movie_details.html"><img src="${title[i].image.url}" alt="${title[i].image.alt}"></a>
-                                  </div> `;
-    }
+                                        <a href ="../pages/movie_details2.html?id=${movie.id}"><img src="${movie.image.url}" alt="${movie.image.alt}"></a>
+                                        </div> `;
+    });
   } catch (error) {
     console.log("Error:", error);
     ResultsContainer.innerHTML = message;

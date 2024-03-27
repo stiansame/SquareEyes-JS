@@ -660,7 +660,8 @@ footer img:hover {
   display: none;
 }
 
-.movie {
+.movie,
+.posterDetails {
   margin: 1rem;
   filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.8));
 }
@@ -1006,7 +1007,7 @@ form {
   background: var(--menu-bg);
   padding: 1rem;
   display: grid;
-  grid-template-rows: minmax(auto, 15rem) repeat(6, auto);
+  grid-template-rows: minmax(auto, 22rem) repeat(6, auto);
 }
 
 .meta {
@@ -1014,12 +1015,25 @@ form {
   display: inline-block;
 }
 
-.det_img {
+.poster {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.posterImg {
+  object-fit: contain;
+  height: 20rem;
+}
+
+/* .det_img {
   width: 100%;
   height: 15rem;
   object-fit: cover;
-  object-position: center;
-}
+} */
 
 .description-container {
   grid-area: 2/1/3/2;
@@ -1058,7 +1072,7 @@ form {
 
 /*--- slider here!---*/
 
-.movie-slider {
+/* .movie-slider {
   grid-area: 1/1/2/2;
   position: relative;
   width: 100%;
@@ -1167,7 +1181,7 @@ form {
 #slide-4:checked~.bullets label[for="slide-4"] {
   width: 4.5rem;
   background-color: #168ed9;
-}
+} */
 
 /* ---modal--- */
 
@@ -1663,8 +1677,14 @@ form {
     gap: 1rem;
   }
 
-  .movie-slider {
+  .movie-slider,
+  .poster {
     grid-area: 1/1/2/2;
+  }
+
+  .posterImg {
+    height: 30rem;
+    object-position: center bottom;
   }
 
   .det_img {
