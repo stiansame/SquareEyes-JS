@@ -7,6 +7,7 @@ export const url = "https://v2.api.noroff.dev/square-eyes";
 
 //Define DIV to display API-call results
 export const ResultsContainer = document.querySelector(".movie-carousel");
+export const favouritesContainer = document.querySelector(".favourites");
 
 //Display message
 export const message = createMessage();
