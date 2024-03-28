@@ -1031,10 +1031,17 @@ form {
 
 .fa-heart {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1.2rem;
+  right: 1.2rem;
   scale: 300%;
   color: #e6eef2;
+  filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.9));
+}
+
+.movie .fa {
+  color: #168ed9;
+  -webkit-text-stroke: .5px #e6eef2;
+  filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.9));
 }
 
 .posterImg {

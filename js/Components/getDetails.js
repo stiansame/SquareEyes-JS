@@ -34,7 +34,7 @@ getDetails();
 
 function createDetails(details) {
   posterContainer.innerHTML = `<div class="posterDetails">
-    <i class="fa-regular fa-heart"></i>
+    <i class="far fa-heart"></i>
    <img class="posterImg" src="${details.image.url}" alt ="${details.image.alt}">
    </div>`;
 
