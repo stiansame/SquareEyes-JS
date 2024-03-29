@@ -1,6 +1,7 @@
 //Imports Here!
 import { createMessage } from "./Components/Message.js";
 import { getMovies } from "./Components/getmovies.js";
+import { getExistingFavs } from "./Components/favFunctions.js";
 
 //URL for API-call
 export const url = "https://v2.api.noroff.dev/square-eyes";

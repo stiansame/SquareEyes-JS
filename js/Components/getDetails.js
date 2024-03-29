@@ -1,6 +1,7 @@
 //Get the movie details
 
-// import { ResultsContainer } from "../script";
+//imports
+import { message } from "../script.js";
 
 const posterContainer = document.querySelector(".poster");
 const descriptionContainer = document.querySelector(".description-container");
@@ -10,7 +11,6 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 
 const movieId = params.get("id");
-console.log("ID:", movieId);
 
 const Url = "https://v2.api.noroff.dev/square-eyes/" + movieId;
 
@@ -20,13 +20,11 @@ async function getDetails() {
     const json = await response.json();
     const details = json.data;
 
-    console.log(details);
-    // checkSale(details);
-    // console.log(checkSale(details));
     createDetails(details);
   } catch (error) {
     console.log("Error:", error);
-    // posterContainer.innerHTML = message;
+    descriptionContainer.innerHTML = message;
+    document.title = "Nope! Didn't catch that...";
   }
 }
 
