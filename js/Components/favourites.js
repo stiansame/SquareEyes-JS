@@ -1,6 +1,5 @@
 import { getExistingFavs } from "./favFunctions.js";
 import { favouritesContainer } from "../script.js";
-// import { getMovies } from "./getmovies.js";
 
 export function getFavs() {
   const favourites = getExistingFavs();
