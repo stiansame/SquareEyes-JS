@@ -22,7 +22,6 @@ async function getDetails() {
 
     createDetails(details);
   } catch (error) {
-    console.log("Error:", error);
     descriptionContainer.innerHTML = message;
     document.title = "Nope! Didn't catch that...";
   }
@@ -38,30 +37,42 @@ function createDetails(details) {
 
   document.title = `${details.title} | Details`;
 
-  descriptionContainer.innerHTML = `<div class="heading_1">
-  ${details.title}
-    </div>
+  descriptionContainer.innerHTML = `<div class="heading_1"> ${details.title}
+   </div>
     <div class="meta">
-    Genre: ${details.genre} | Released: ${details.released} |  Rating: ${
-    details.rating
-  }
+    Genre: ${details.genre} | Released: ${details.released}
+     |  Rating: ${details.rating}
     </div>
    <div class="desc">
     <p><B>Description:</b></p><p>${details.description}</p>
     </div> 
     <div class="desc">
-    <p><b>Price:</b> Kr ${checkSale(details)} </p>
+    <p><b>Price:</b> Kr ${price(details)} ${onSale(details)}</p>
     </div>                                `;
 }
 
-function checkSale(details) {
+function price(details) {
   const onSale = details.onSale;
   let newPrice;
-
   if (!onSale) {
     newPrice = details.price;
   } else {
     newPrice = details.discountedPrice;
   }
   return newPrice;
+}
+
+function onSale(details) {
+  const onDiscount = details.onSale;
+
+  let discount;
+  if (!onDiscount) {
+    discount = "";
+  } else {
+    discount =
+      "<span class='discount'>On Sale!</span>" +
+      "<span class='regPrice'> Ord. price: Kr " +
+      details.price;
+  }
+  return discount;
 }
