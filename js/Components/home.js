@@ -1,34 +1,69 @@
-// import { message } from "../script.js";
+import { url } from "../script.js";
+
+console.log("url:", url);
+
+const featuredContainer = document.querySelector(".featured_content");
+const comFav = document.querySelector(".comFav");
 
 async function getAllMovies() {
-  try {
-    const favourites = getExistingFavs();
+  const response = await fetch(url);
+  const json = await response.json();
+  const movies = json.data;
 
-    const response = await fetch(url);
-    const json = await response.json();
+  getFeatured(movies);
+  //   getLatest(movies);
+  getApiFav(movies);
+}
 
-    resultsContainer.innerHTML = "";
-    favouritesContainer.innerHTML = "";
+getAllMovies();
 
-    const movies = json.data;
+export function getFeatured(movies) {
+  //   Fisher-Yates Sorting Algorithm
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
 
-    movies.forEach(function (movie) {
-      let cssClass = "far";
+  featuredContainer.innerHTML = "";
 
-      const doesObjectExist = favourites.find(function (fav) {
-        return fav.id === movie.id;
-      });
+  const myArray = movies;
+  const shuffledArray = shuffle(myArray);
 
-      if (doesObjectExist) {
-        cssClass = "fa";
-      }
+  //   for (let i = 0; i < shuffledArray.length; i++) {
+  //     if (i === 2) {
+  //       break;
+  //     }
+  //     console.log("Random Featured:", shuffledArray[i].title);
+  //   }
 
-      resultsContainer.innerHTML += `<div class="movie">
-                                      <i class="${cssClass} fa-heart" data-id="${movie.id}" data-name="${movie.title}" data-cover="${movie.image.url}"></i>
-                                        <a href ="../pages/movie_details2.html?id=${movie.id}"><img src="${movie.image.url}" alt="${movie.image.alt}"></a>
-                                        </div> `;
-    });
-  } catch (error) {
-    resultsContainer.innerHTML = message;
+  for (let i = 0; i < shuffledArray.length; i++) {
+    featuredContainer.innerHTML += `<div class="feature" style="background-image:url(${shuffledArray[i].image.url})">
+                                        
+                                        <div class="feature-content">
+                                        <div class="heading_1">${shuffledArray[i].title}</div>
+                                        <div class="rating"> Rating: ${shuffledArray[i].rating}</div>
+                                        <div class="desc"><p> ${shuffledArray[i].description}</p></div>
+                                        <div class="cta_button">
+                                        <a href="/pages/movie_details2.html?id=${shuffledArray[i].id}"> Read More!</a>
+                                        </div>
+                                        </div>
+                                        </div>`;
+
+    if (i === 1) {
+      break;
+    }
+  }
+}
+
+//Display by API favourite
+function getApiFav(movies) {
+  for (let i = 0; i < movies.length; i++) {
+    if (!movies[i].favorite) {
+      continue;
+    }
+    // console.log("favs:", movies[i].title);
   }
 }

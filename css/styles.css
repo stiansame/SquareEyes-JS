@@ -147,7 +147,7 @@ h3 {
 }
 
 .desc {
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1em, 3vw, 1.3em);
 }
 
 .cta_button {
@@ -532,22 +532,25 @@ footer img:hover {
 
 .feature {
   flex: 1 0 100%;
-  min-height: 25rem;
-}
+  min-height: 30rem;
+
+  /* }
 
 .featured_content .one,
-.featured_content .two {
+.featured_content .two { */
   background-position: top center;
   background-size: cover;
-}
+  /* }
 
-.featured_content .one {
+.featured_content .one { */
   background-image: url(../images/featured/interstellar-movie-cover.jpg);
 }
 
 .featured_content .two {
   background-image: url(../images/featured/the-green-mile-movie-cover.jpg);
 }
+
+
 
 .feature-content {
   display: grid;
@@ -649,6 +652,7 @@ footer img:hover {
   padding-top: 1rem;
 }
 
+.comFav,
 .movie-carousel,
 .favourites {
   display: flex;

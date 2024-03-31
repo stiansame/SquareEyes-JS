@@ -1,6 +1,5 @@
 //Imports Here!
 import { createMessage } from "./Components/Message.js";
-import { getMovies } from "./Components/getmovies.js";
 
 //URL for API-call
 export const url = "https://v2.api.noroff.dev/square-eyes";
@@ -11,5 +10,3 @@ export const favouritesContainer = document.querySelector(".favourites");
 
 //Display message
 export const message = createMessage();
-
-getMovies();

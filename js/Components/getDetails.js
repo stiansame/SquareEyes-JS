@@ -13,11 +13,11 @@ const params = new URLSearchParams(queryString);
 
 const movieId = params.get("id");
 
-const Url = "https://v2.api.noroff.dev/square-eyes/" + movieId;
+const Url2 = "https://v2.api.noroff.dev/square-eyes/" + movieId;
 
 async function getDetails() {
   try {
-    const response = await fetch(Url);
+    const response = await fetch(Url2);
     const json = await response.json();
     const details = json.data;
 
