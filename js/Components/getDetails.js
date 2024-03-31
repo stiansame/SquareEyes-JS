@@ -1,10 +1,11 @@
 //Get the movie details
 
 //imports
-import { message } from "../script.js";
+import { createMessage } from "../Components/Message.js";
 
 const posterContainer = document.querySelector(".poster");
 const resultsContainer = document.querySelector(".description-container");
+const message = createMessage();
 
 const queryString = document.location.search;
 
