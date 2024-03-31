@@ -1,5 +1,6 @@
 import { getExistingFavs } from "./favFunctions.js";
 import { favouritesContainer } from "../script.js";
+import { resultsContainer } from "../script.js";
 import { handleClick } from "./favFunctions.js";
 
 export function getFavs() {

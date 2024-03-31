@@ -4,7 +4,7 @@
 import { message } from "../script.js";
 
 const posterContainer = document.querySelector(".poster");
-const descriptionContainer = document.querySelector(".description-container");
+const resultsContainer = document.querySelector(".description-container");
 
 const queryString = document.location.search;
 
@@ -22,7 +22,7 @@ async function getDetails() {
 
     createDetails(details);
   } catch (error) {
-    descriptionContainer.innerHTML = message;
+    resultsContainer.innerHTML = message;
     document.title = "Nope! Didn't catch that...";
   }
 }
@@ -37,7 +37,7 @@ function createDetails(details) {
 
   document.title = `${details.title} | Details`;
 
-  descriptionContainer.innerHTML = `<div class="heading_1"> ${details.title}
+  resultsContainer.innerHTML = `<div class="heading_1"> ${details.title}
    </div>
     <div class="meta">
     Genre: ${details.genre} | Released: ${details.released}
