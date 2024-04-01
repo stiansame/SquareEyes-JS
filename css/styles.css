@@ -187,7 +187,7 @@ a:hover {
 }
 
 .rating {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-size: clamp(1.3em, 3vw, 1.8em);
   color: #168ed9;
   align-self: center;
 }
@@ -665,8 +665,8 @@ footer img:hover {
 
 .movie img {
   grid-area: 1/1/3/2;
-  height: 23rem;
-  width: 14rem;
+  height: 16rem;
+  width: 10rem;
   object-fit: cover;
 }
 
@@ -1069,7 +1069,7 @@ form {
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  scale: 300%;
+  scale: 200%;
   color: #e6eef2;
   filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.9));
 }
