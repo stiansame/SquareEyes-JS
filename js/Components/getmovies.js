@@ -50,5 +50,4 @@ export async function getMovies() {
 
 setTimeout(function () {
   getMovies();
-  console.log("waiting...");
 }, 500);

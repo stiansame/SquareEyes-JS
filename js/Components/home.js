@@ -65,7 +65,5 @@ function getApiFav(movies) {
                            <img src="${movies[i].image.url}" alt="${movies[i].title}">
                            </a>
                             </div>`;
-
-    console.log("favs:", movies[i].title);
   }
 }
