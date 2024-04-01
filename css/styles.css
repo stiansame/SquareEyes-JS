@@ -5,6 +5,7 @@
 *::before {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -685,6 +686,51 @@ footer img:hover {
 
 .movie:hover img {
   outline: #168ed9 solid 3px;
+}
+
+
+/*--- Loader-bar---*/
+
+.loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.loading {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading .loadLineBox {
+  padding: 2px;
+  width: 30%;
+  height: 20px;
+  border: 2px solid #edeae6;
+  border-radius: 20px;
+}
+
+.loading .loadLineBox .loadLine {
+  height: 12px;
+  border-radius: 20px;
+  background: #168ed9;
+  animation: fetching 700ms forwards cubic-bezier(0, 0, 0, 0);
+}
+
+@keyframes fetching {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 /*--New arrivals End here! ----*/

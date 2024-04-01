@@ -48,4 +48,7 @@ export async function getMovies() {
   getFavs();
 }
 
-getMovies();
+setTimeout(function () {
+  getMovies();
+  console.log("waiting...");
+}, 500);
