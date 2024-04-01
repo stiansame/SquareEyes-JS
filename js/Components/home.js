@@ -1,7 +1,5 @@
 import { url } from "../script.js";
 
-console.log("url:", url);
-
 const featuredContainer = document.querySelector(".featured_content");
 const comFav = document.querySelector(".comFav");
 
@@ -11,7 +9,6 @@ async function getAllMovies() {
   const movies = json.data;
 
   getFeatured(movies);
-  //   getLatest(movies);
   getApiFav(movies);
 }
 
