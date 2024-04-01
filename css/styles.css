@@ -15,8 +15,8 @@
 
 html {
   margin: 0 auto;
-  max-width: 1640px;
-  font-size: 16px;
+  max-width: 1140px;
+  font-size: 14px;
   background-color: var(--menu-bg);
   background: linear-gradient(#363638 0%, #161618 75%);
   background-size: cover;
@@ -114,7 +114,7 @@ main {
 
 .heading_1 {
   font-family: "niveau-grotesk", sans-serif;
-  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-size: clamp(1.6rem, 6vw, 3rem);
   font-weight: bold;
 }
 
@@ -130,13 +130,13 @@ main {
 
 h1 {
   font-family: "niveau-grotesk", sans-serif;
-  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-size: clamp(1.6rem, 6vw, 3rem);
   font-weight: bold;
 }
 
 h2 {
   font-family: "niveau-grotesk", sans-serif;
-  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-size: clamp(1.6rem, 6vw, 3rem);
   font-weight: bold;
   padding-left: 1rem;
 }
@@ -148,11 +148,11 @@ h3 {
 }
 
 .desc {
-  font-size: clamp(1em, 3vw, 1.3em);
+  font-size: clamp(.9em, 2vw, 1.1em);
 }
 
 .cta_button {
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
   border-radius: 0.2rem;
   background-color: #168ed9;
   width: fit-content;
@@ -328,7 +328,7 @@ nav a {
   color: #e6eef2;
   text-decoration: none;
   display: block;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.4rem, 4vw, 2rem);
   text-transform: uppercase;
   opacity: 0;
   transition: opacity 0.15s ease-in-out;
@@ -533,24 +533,10 @@ footer img:hover {
 
 .feature {
   flex: 1 0 100%;
-  min-height: 30rem;
-
-  /* }
-
-.featured_content .one,
-.featured_content .two { */
+  min-height: 25rem;
   background-position: top center;
   background-size: cover;
-  /* }
-
-.featured_content .one { */
-  background-image: url(../images/featured/interstellar-movie-cover.jpg);
 }
-
-.featured_content .two {
-  background-image: url(../images/featured/the-green-mile-movie-cover.jpg);
-}
-
 
 
 .feature-content {
@@ -1520,7 +1506,7 @@ form {
   header {
     grid-area: 1/2/2/3;
     display: grid;
-    grid-template-columns: auto minmax(600px, 1fr);
+    grid-template-columns: auto minmax(560px, 1fr);
     align-items: center;
     padding: 0rem 1rem 1rem;
   }
@@ -1649,8 +1635,12 @@ form {
     display: grid;
     gap: 1rem;
     grid-area: 1/1/-1/-1;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
+  }
+
+  .feature {
+    min-height: 35rem;
   }
 
   /*End featured styling*/

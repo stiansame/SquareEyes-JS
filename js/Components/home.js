@@ -36,7 +36,7 @@ export function getFeatured(movies) {
     featuredContainer.innerHTML += `<div class="feature" style="background-image:url(${shuffledArray[i].image.url})">
                                         
                                         <div class="feature-content">
-                                        <div class="heading_1">${shuffledArray[i].title}</div>
+                                        <div class="heading_1"><h3>${shuffledArray[i].title}</h3></div>
                                         <div class="rating"> Rating: ${shuffledArray[i].rating}</div>
                                         <div class="desc"><p> ${shuffledArray[i].description}</p></div>
                                         <div class="cta_button">
@@ -45,7 +45,7 @@ export function getFeatured(movies) {
                                         </div>
                                         </div>`;
 
-    if (i === 1) {
+    if (i === 2) {
       break;
     }
   }
