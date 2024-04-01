@@ -1068,7 +1068,7 @@ form {
 .fa-heart {
   position: absolute;
   top: 1.2rem;
-  right: 1.2rem;
+  left: 1.2rem;
   scale: 200%;
   color: #e6eef2;
   filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.9));
