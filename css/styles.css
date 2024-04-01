@@ -661,6 +661,7 @@ footer img:hover {
 .posterDetails {
   margin: 1rem;
   filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.8));
+  position: relative;
 }
 
 .movie img {
@@ -1061,17 +1062,17 @@ form {
   width: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
-
 }
+
 
 .fa-heart {
   position: absolute;
   top: 1.2rem;
-  left: 1.2rem;
+  right: 1.2rem;
   scale: 200%;
   color: #e6eef2;
   filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.9));
+  z-index: 10;
 }
 
 .movie .fa {
