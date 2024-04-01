@@ -32,13 +32,6 @@ export function getFeatured(movies) {
   const myArray = movies;
   const shuffledArray = shuffle(myArray);
 
-  //   for (let i = 0; i < shuffledArray.length; i++) {
-  //     if (i === 2) {
-  //       break;
-  //     }
-  //     console.log("Random Featured:", shuffledArray[i].title);
-  //   }
-
   for (let i = 0; i < shuffledArray.length; i++) {
     featuredContainer.innerHTML += `<div class="feature" style="background-image:url(${shuffledArray[i].image.url})">
                                         
@@ -60,10 +53,19 @@ export function getFeatured(movies) {
 
 //Display by API favourite
 function getApiFav(movies) {
+  //Empty Community Favourites
+  comFav.innerHTML = "";
+
   for (let i = 0; i < movies.length; i++) {
     if (!movies[i].favorite) {
       continue;
     }
-    // console.log("favs:", movies[i].title);
+    comFav.innerHTML += `<div class="movie">
+                           <a href ="/pages/movie_details2.html?id=${movies[i].id}">
+                           <img src="${movies[i].image.url}" alt="${movies[i].title}">
+                           </a>
+                            </div>`;
+
+    console.log("favs:", movies[i].title);
   }
 }
