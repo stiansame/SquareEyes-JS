@@ -1095,7 +1095,8 @@ form {
 
 .regPrice {
   font-style: italic;
-  text-decoration: line-through red;
+  text-decoration-line: line-through;
+  text-decoration-color: red;
   margin-left: 1rem;
   font-size: smaller;
   font-weight: lighter;
