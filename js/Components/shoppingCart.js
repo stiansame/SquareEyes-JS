@@ -1,13 +1,11 @@
 // SHOPPING CART
 
 import { mDetails, resultsContainer } from "./getDetails.js";
-import { checkForDetails } from "./getDetails.js";
 
 // console.log(mDetails);
 
-checkForDetails();
 const detailArray = mDetails;
-console.log("array: ", detailArray);
+console.log(detailArray);
 
 const iconCart = document.querySelector("#cart");
 const body = document.querySelector("body");
@@ -21,10 +19,9 @@ closeCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
 });
 
-resultsContainer.addEventListener("click", (event) => {
-  const positionClick = event.target;
+resultsContainer.addEventListener("click", () => {
+  let positionClick = event.target;
   if (positionClick.classList.contains("addToCart")) {
-    const p_id = detailArray.id;
-    alert(p_id);
+    alert("1");
   }
 });

@@ -26,8 +26,8 @@ export async function getDetails() {
     const details = json.data;
 
     createDetails(details);
-    storeDetail(details);
     checkForDetails(details);
+    storeDetail(details);
   } catch (error) {
     resultsContainer.innerHTML = message;
     document.title = "Nope! Didn't catch that...";
