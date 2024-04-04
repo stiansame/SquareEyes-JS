@@ -48,7 +48,9 @@ function createDetails(details) {
     <p><B>Description:</b></p><p>${details.description}</p>
     </div> 
     <div class="desc">
-    <p><b>Price:</b> Kr ${price(details)} ${onSale(details)}</p>
+    <p><b>Price:</b> Kr ${price(details)} ${onSale(details)}</p></div>
+    <div class="desc">
+    <div class="cta_button">Add to cart</div>
     </div>                                `;
 }
 

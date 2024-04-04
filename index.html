@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/wgh0tdc.css">
   <link href="css/styles.css" rel="stylesheet">
   <script defer src="./js/Components/home.js" type="module"></script>
+  <script defer src="./js/Components/shoppingCart.js" type="module"></script>
   <title>SquareEyes - Home</title>
 
 </head>
@@ -37,7 +38,13 @@
             <div class="menu-item"><a href="../pages/contact.html">contact</a></div>
           </li>
           <li>
-            <div class="menu-item"><a href="../pages/shopping_cart.html"><span>shopping cart</span><i class="fa-solid fa-cart-shopping"></i></a></div>
+            <div class="menu-item">
+              <div id="cart">
+                <span>shopping cart</span>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div id="counter">0</div>
+              </div>
+            </div>
           </li>
           <li>
             <div class="menu-item"><a href="../pages/player.html"><span>player</span><i class="fa-regular fa-circle-play"></i></a></div>
@@ -64,6 +71,37 @@
         <i class="fa-solid fa-x"></i>
       </label>
     </header>
+  </div>
+  <div class="cartTab">
+    <h1>Shopping cart</h1>
+    <div class="cartList">
+      <div class="cartItem">
+        <div class="movie">
+          <img src="/images/Square_Eyes_Cover3.jpeg" alt="">
+        </div>
+        <div class="title">Title1</div>
+        <div class="price"><b>Price:</b>159</div>
+      </div>
+      <div class="cartItem">
+        <div class="movie">
+          <img src="/images/Square_Eyes_Cover2.jpeg" alt="">
+        </div>
+        <div class="title">Title1</div>
+        <div class="price"><b>Price:</b>199</div>
+      </div>
+      <div class="cartItem">
+        <div class="movie">
+          <img src="/images/Square_Eyes_Cover4.jpeg" alt="">
+        </div>
+        <div class="title">Title1</div>
+        <div class="price"><b>Price:</b>109</div>
+      </div>
+    </div>
+    <div class="cartBtn">
+      <button class="close">Close</button>
+      <button class="checkOut">Check Out</button>
+    </div>
+
   </div>
   <main>
     <section class="hero">
