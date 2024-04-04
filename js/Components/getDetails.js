@@ -4,7 +4,9 @@
 import { createMessage } from "../Components/Message.js";
 
 const posterContainer = document.querySelector(".poster");
-const resultsContainer = document.querySelector(".description-container");
+export const resultsContainer = document.querySelector(
+  ".description-container"
+);
 const message = createMessage();
 
 const queryString = document.location.search;
@@ -15,13 +17,17 @@ const movieId = params.get("id");
 
 const Url2 = "https://v2.api.noroff.dev/square-eyes/" + movieId;
 
-async function getDetails() {
+export const mDetails = checkForDetails();
+
+export async function getDetails() {
   try {
     const response = await fetch(Url2);
     const json = await response.json();
     const details = json.data;
 
     createDetails(details);
+    storeDetail(details);
+    checkForDetails(details);
   } catch (error) {
     resultsContainer.innerHTML = message;
     document.title = "Nope! Didn't catch that...";
@@ -50,7 +56,7 @@ function createDetails(details) {
     <div class="desc">
     <p><b>Price:</b> Kr ${price(details)} ${onSale(details)}</p></div>
     <div class="desc">
-    <div class="cta_button">Add to cart</div>
+    <div class="cta_button addToCart">Add to cart</div>
     </div>                                `;
 }
 
@@ -78,4 +84,19 @@ function onSale(details) {
       details.price;
   }
   return discount;
+}
+
+//Set details to SessionStorage
+function storeDetail(sessionDetails) {
+  sessionStorage.setItem("movieDetails", JSON.stringify(sessionDetails));
+}
+
+//Check SessionStoreage
+export function checkForDetails() {
+  const sessionDetails = sessionStorage.getItem("movieDetails");
+  if (!sessionDetails) {
+    return [];
+  } else {
+    return JSON.parse(sessionDetails);
+  }
 }
