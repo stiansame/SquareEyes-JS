@@ -406,14 +406,15 @@ nav .menu-item:hover {
   padding: 1rem;
   display: grid;
   grid-template-rows: 4rem 1fr 4rem;
-  inset: 10rem -300px 20rem auto;
+  inset: 10rem -300px 0rem auto;
   border-bottom: #1c4b67 solid 0.5rem;
   filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.8));
   transition: 500ms;
+  overflow: auto;
 }
 
 body.showCart .cartTab {
-  inset: 10rem 0 20rem auto;
+  inset: 10rem 0 0rem auto;
 }
 
 .cartTab .cartBtn {

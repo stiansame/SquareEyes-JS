@@ -93,12 +93,20 @@ function checkCart() {
   }
 }
 
-const initApp = () => {
+// const initApp = () => {
+//   let mainCart = checkCart();
+//   if (localStorage.getItem("shoppingCart")) {
+//     mainCart = JSON.parse(localStorage.getItem("shoppingCart"));
+//     addCartToHTML();
+//   }
+// };
+
+export function initApp() {
   let mainCart = checkCart();
   if (localStorage.getItem("shoppingCart")) {
     mainCart = JSON.parse(localStorage.getItem("shoppingCart"));
     addCartToHTML();
   }
-};
+}
 
 initApp();
