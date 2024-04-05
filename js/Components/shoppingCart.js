@@ -5,11 +5,11 @@ import { checkForDetails } from "./getDetails.js";
 let ItemsCartHTML = document.querySelector(".cartList");
 let cartIconCounter = document.querySelector("#counter");
 
-const movieDetails = document.querySelector("main");
+const movieDetails = document.querySelector(".cartFunction");
 const iconCart = document.querySelector("#cart");
 const body = document.querySelector("body");
 const closeCart = document.querySelector(".cartTab .close");
-const cartBtn = document.querySelector("#addToCart");
+const cartBtn = document.querySelector("#PushToCart");
 
 iconCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
@@ -21,7 +21,7 @@ closeCart.addEventListener("click", () => {
 
 movieDetails.addEventListener("click", cartHandler, () => {
   let positionClick = event.target;
-  if (positionClick.classList.contains("addToCart")) {
+  if (positionClick.classList.contains("PushToCart")) {
     // addToCart(mDetails);
   } else {
   }
