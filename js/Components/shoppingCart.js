@@ -21,10 +21,11 @@ closeCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
 });
 
-movieDetails.addEventListener("click", () => {
+movieDetails.addEventListener("click", (event) => {
   let positionClick = event.target;
   if (positionClick.classList.contains("PushToCart")) {
     cartHandler();
+
   }
 });
 
@@ -95,7 +96,6 @@ function checkCart() {
 }
 
 //calculate and render subtotal
-
 function renderSubtotal() {
   let totalPrice = 0,
     totalItems = 0;
@@ -110,6 +110,8 @@ function renderSubtotal() {
     2
   )}`;
 }
+
+//remove item from cart
 
 export function initApp() {
   let mainCart = checkCart();

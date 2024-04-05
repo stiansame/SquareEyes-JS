@@ -12,4 +12,5 @@ export const favouritesContainer = document.querySelector(".favourites");
 //Display message
 export const message = createMessage();
 
+
 initApp();
