@@ -1,11 +1,11 @@
 // SHOPPING CART
 
-import { resultsContainer } from "./getDetails.js";
 import { checkForDetails } from "./getDetails.js";
 
 let ItemsCartHTML = document.querySelector(".cartList");
 let cartIconCounter = document.querySelector("#counter");
 
+const movieDetails = document.querySelector("main");
 const iconCart = document.querySelector("#cart");
 const body = document.querySelector("body");
 const closeCart = document.querySelector(".cartTab .close");
@@ -19,10 +19,11 @@ closeCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
 });
 
-resultsContainer.addEventListener("click", cartHandler, () => {
+movieDetails.addEventListener("click", cartHandler, () => {
   let positionClick = event.target;
   if (positionClick.classList.contains("addToCart")) {
     // addToCart(mDetails);
+  } else {
   }
 });
 
