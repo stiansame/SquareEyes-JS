@@ -17,8 +17,6 @@ const movieId = params.get("id");
 
 const Url2 = "https://v2.api.noroff.dev/square-eyes/" + movieId;
 
-export const mDetails = checkForDetails();
-
 export async function getDetails() {
   try {
     const response = await fetch(Url2);
@@ -56,8 +54,9 @@ function createDetails(details) {
     <div class="desc">
     <p><b>Price:</b> Kr ${price(details)} ${onSale(details)}</p></div>
     <div class="desc">
-    <div class="cta_button addToCart">Add to cart</div>
-    </div>                                `;
+    <div class="cta_button addToCart" data-id="${details.id}">
+    Add to cart</div>
+    </div>`;
 }
 
 function price(details) {
