@@ -1,135 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Not a menber? This is where you remedy that!">
-    <script
-      src="https://kit.fontawesome.com/2072bb14b3.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="https://use.typekit.net/wgh0tdc.css" >
-    <link href="../css/styles.css" rel="stylesheet" >
-    <title>SquareEyes - Register User</title>
-  <body>
-    <div class="header-container">
-      <header>
-        <div class="logo"><a href="../index.html"><img src="../images/SquareEyes_logo.svg" alt="Logo for SquareEyes website"></a></div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <nav>
 
-            <ul>
-            <li><div class="menu-item hide"><a href="../index.html">home</a></div></li>
-            <li><div class="menu-item"><a href="../pages/movies.html">movies</a></div></li>
-            <li><div class="menu-item"><a href="../pages/about.html">about</a></div></li>
-            <li><div class="menu-item"><a href="../pages/contact.html">contact</a></div></li>
-            <li><div class="menu-item"><a href="../pages/shopping_cart.html"><span>shopping cart</span><i class="fa-solid fa-cart-shopping"></i></a></div></li>
-            <li><div class="menu-item"><a href="../pages/player.html"><span>player</span><i class="fa-regular fa-circle-play"></i></a></div></li>
-            <li><div class="menu-item" id="dp-toggle"><a href="#"><i class="fa-solid fa-user"></i></a></div>
-              <ul class="dropdown">
-                <li><div class="menu-item" id="loginBtn"><a href="#">login</a></div></li>
-                <li><div class="menu-item"><a href="../pages/mypage.html">My Page</a></div></li>
-                <li><div class="menu-item" id="logoutBtn"><a href="#">Logout</a></div></li>
-              </ul>
-          </li>
-          </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Not a menber? This is where you remedy that!">
+  <script src="https://kit.fontawesome.com/2072bb14b3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/wgh0tdc.css">
+  <link href="../css/styles.css" rel="stylesheet">
+  <title>SquareEyes - Register User</title>
 
-        </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-          <i class="fas fa-bars"></i>
-          <i class="fa-solid fa-x"></i>
-        </label>
-      </header>
-    </div>
-    <main id="register">
-        <div class="heading_1"><h1>Register user</h1>
-        </div>
-        <div class="register-content">
-          <form >
-            <label for="fullname">Full name</label>
-            <input type="text" name="fullname" id="fullname" class="form__input" placeholder="Full name" >
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" class="form__input" placeholder="E-mail" >
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form__input" placeholder="Type in password" >
-            <input type="button" value="Sign up!" class="cta_button" id="reg">
-        </form>
-        </div>
-      </main>
+<body>
+  <div class="header-container">
+    <header>
+      <div class="logo"><a href="../index.html"><img src="../images/SquareEyes_logo.svg" alt="Logo for SquareEyes website"></a></div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <nav>
 
-
-    <footer>
-      <div>
         <ul>
-          <li><a href="http://youtube.com" target="new"><img src="../images/some/Youtube.png" alt="youtube"></a></li>
-          <li><a href="http://Discord.com" target="new"><img src="../images/some/Discord.png" alt="discord"></a></li>
-          <li><a href="http://Facebook.com" target="new"><img src="../images/some/Facebook.png" alt="facebook"></a></li>
-          <li><a href="http://instagram.com" target="new"><img src="../images/some/Instagram.png" alt="instagram"></a></li>
-          <li><a href="http://snapchat.com" target="new"><img src="../images/some/SnapChat.png" alt="snapchat"></a></li>
-          <li><a href="http://twitter.com" target="new"><img src="../images/some/Twitter.png" alt="twitter"></a></li>
+          <li>
+            <div class="menu-item hide"><a href="../index.html">home</a></div>
+          </li>
+          <li>
+            <div class="menu-item"><a href="../pages/movies.html">movies</a></div>
+          </li>
+          <li>
+            <div class="menu-item"><a href="../pages/about.html">about</a></div>
+          </li>
+          <li>
+            <div class="menu-item"><a href="../pages/contact.html">contact</a></div>
+          </li>
+          <li>
+            <div class="menu-item">
+              <div class="menu-item">
+                <div id="cart">
+                  <span>shopping cart</span>
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <div id="counter">0</div>
+                </div>
+              </div>
+          </li>
+          <li>
+            <div class="menu-item"><a href="../pages/player.html"><span>player</span><i class="fa-regular fa-circle-play"></i></a></div>
+          </li>
+          <li>
+            <div class="menu-item" id="dp-toggle"><a href="#"><i class="fa-solid fa-user"></i></a></div>
+            <ul class="dropdown">
+              <li>
+                <div class="menu-item" id="loginBtn"><a href="#">login</a></div>
+              </li>
+              <li>
+                <div class="menu-item"><a href="../pages/mypage.html">My Page</a></div>
+              </li>
+              <li>
+                <div class="menu-item" id="logoutBtn"><a href="#">Logout</a></div>
+              </li>
+            </ul>
+          </li>
         </ul>
-        <p>2023 Stian Rostad &copy;</p>
-        <p>All images found on <a href="http://www.movieposters.com" target="new">www.movieposters.com</a>
-          or <a href="http://www.cinematerial.com" target="new">www.cinematerial.com</a></p>
-        <p>All icons found on <a href="http://www.flaticon.com" target="new">www.flaticon.com</a> or <a href="http://www.fontawesome.com" target="new">www.fontawesome.com</a></p>
-      </div>
-    </footer>
 
-    <!--Login modal here!-->
-
-    <dialog class="modal" id="loginDialog">
-      <div class="popup">
-        <h3>Login</h3>
-          <div class="popup-content">
-            <form action="../pages/mypage.html" target="_self">
-              <label for="email2">E-mail</label>
-              <input type="email" name="email2" id="email2" class="form__input" required>
-              <label for="password2">Password</label>
-              <input type="password" name="password2" id="password2" class="form__input" required>
-              <span>Sign up <a href="../pages/register.html">HERE!</a></span>
-              <div class="actions">
-              <input type="reset" value="Cancel" class="cta_button" id="cancelBtn">
-              <input type="submit" value="Login" class="cta_button">
-              </div>
-          </form>
-        </div>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <i class="fas fa-bars"></i>
+        <i class="fa-solid fa-x"></i>
+      </label>
+    </header>
+  </div>
+  <main id="register">
+    <div class="heading_1">
+      <h1>Register user</h1>
     </div>
-    </dialog>
+    <div class="register-content">
+      <form>
+        <label for="fullname">Full name</label>
+        <input type="text" name="fullname" id="fullname" class="form__input" placeholder="Full name">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" class="form__input" placeholder="E-mail">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form__input" placeholder="Type in password">
+        <input type="button" value="Sign up!" class="cta_button" id="reg">
+      </form>
+    </div>
+  </main>
 
-    
-        <!--Logout modal here!-->
 
-        <dialog class="modal" id="logoutDialog">
-            <div class="popup" id="logout">
-              <h3>Logged out! </h3>
-              <div class="popup-content">
-                <a href="../index.html"><div class="cta_button">Browse</div></a>
-              </div>
-            </div>
-          </dialog>
+  <footer>
+    <div>
+      <ul>
+        <li><a href="http://youtube.com" target="new"><img src="../images/some/Youtube.png" alt="youtube"></a></li>
+        <li><a href="http://Discord.com" target="new"><img src="../images/some/Discord.png" alt="discord"></a></li>
+        <li><a href="http://Facebook.com" target="new"><img src="../images/some/Facebook.png" alt="facebook"></a></li>
+        <li><a href="http://instagram.com" target="new"><img src="../images/some/Instagram.png" alt="instagram"></a></li>
+        <li><a href="http://snapchat.com" target="new"><img src="../images/some/SnapChat.png" alt="snapchat"></a></li>
+        <li><a href="http://twitter.com" target="new"><img src="../images/some/Twitter.png" alt="twitter"></a></li>
+      </ul>
+      <p>2023 Stian Rostad &copy;</p>
+      <p>All images found on <a href="http://www.movieposters.com" target="new">www.movieposters.com</a>
+        or <a href="http://www.cinematerial.com" target="new">www.cinematerial.com</a></p>
+      <p>All icons found on <a href="http://www.flaticon.com" target="new">www.flaticon.com</a> or <a href="http://www.fontawesome.com" target="new">www.fontawesome.com</a></p>
+    </div>
+  </footer>
 
+  <!--Login modal here!-->
 
-        <!--Register Success modal here!-->
-
-        <dialog class="modal" id="welcomeDialog">
-          <div class="popup">
-            <h3>Welcome!</h3>
-            <div class="popup-content">
-              <p class="desc">You are on your way to an unsurpassed streaming experience!</p>
-              <a href="../pages/mypage.html"><div class="cta_button" id="mypageBtn">My Page</div></a>
-            </div>
+  <dialog class="modal" id="loginDialog">
+    <div class="popup">
+      <h3>Login</h3>
+      <div class="popup-content">
+        <form action="../pages/mypage.html" target="_self">
+          <label for="email2">E-mail</label>
+          <input type="email" name="email2" id="email2" class="form__input" required>
+          <label for="password2">Password</label>
+          <input type="password" name="password2" id="password2" class="form__input" required>
+          <span>Sign up <a href="../pages/register.html">HERE!</a></span>
+          <div class="actions">
+            <input type="reset" value="Cancel" class="cta_button" id="cancelBtn">
+            <input type="submit" value="Login" class="cta_button">
           </div>
-        </dialog>
-
-    
-
-    <!--Javascript for Modal here!-->
-    <script src="../js/modalWelcome.js"></script>
-    <script src="../js/modalLogin.js"></script>
-    <script src="../js/modalLogout.js"></script>
-    <script src="../js/modalCheckout.js"></script>
+        </form>
+      </div>
+    </div>
+  </dialog>
 
 
-  </body>
+  <!--Logout modal here!-->
+
+  <dialog class="modal" id="logoutDialog">
+    <div class="popup" id="logout">
+      <h3>Logged out! </h3>
+      <div class="popup-content">
+        <a href="../index.html">
+          <div class="cta_button">Browse</div>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+
+  <!--Register Success modal here!-->
+
+  <dialog class="modal" id="welcomeDialog">
+    <div class="popup">
+      <h3>Welcome!</h3>
+      <div class="popup-content">
+        <p class="desc">You are on your way to an unsurpassed streaming experience!</p>
+        <a href="../pages/mypage.html">
+          <div class="cta_button" id="mypageBtn">My Page</div>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+
+
+  <!--Javascript for Modal here!-->
+  <script src="../js/modalWelcome.js"></script>
+  <script src="../js/modalLogin.js"></script>
+  <script src="../js/modalLogout.js"></script>
+  <script src="../js/modalCheckout.js"></script>
+
+
+</body>
+
 </html>
