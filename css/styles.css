@@ -413,6 +413,10 @@ nav .menu-item:hover {
   overflow: auto;
 }
 
+.cartTab h1 {
+  font-size: 2em;
+}
+
 body.showCart .cartTab {
   inset: 10rem 0 0rem auto;
 }
