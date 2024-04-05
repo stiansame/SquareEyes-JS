@@ -21,11 +21,10 @@ closeCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
 });
 
-movieDetails.addEventListener("click", cartHandler, () => {
+movieDetails.addEventListener("click", () => {
   let positionClick = event.target;
   if (positionClick.classList.contains("PushToCart")) {
-    // addToCart(mDetails);
-  } else {
+    cartHandler();
   }
 });
 
@@ -104,10 +103,12 @@ function renderSubtotal() {
   let basket = checkCart();
 
   basket.forEach((item) => {
-    totalPrice += item.price * item.amount;
+    totalPrice += item.price;
     totalItems += item.amount;
   });
-  subTotalEl.innerHTML = `Subtotal (${totalItems} items): Kr ${totalPrice}`;
+  subTotalEl.innerHTML = `Subtotal (${totalItems} items): Kr ${totalPrice.toFixed(
+    2
+  )}`;
 }
 
 export function initApp() {
