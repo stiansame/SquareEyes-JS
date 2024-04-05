@@ -10,9 +10,11 @@ const iconCart = document.querySelector("#cart");
 const body = document.querySelector("body");
 const closeCart = document.querySelector(".cartTab .close");
 const cartBtn = document.querySelector("#PushToCart");
+const subTotalEl = document.querySelector(".subTotal");
 
 iconCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
+  renderSubtotal();
 });
 
 closeCart.addEventListener("click", () => {
@@ -93,13 +95,20 @@ function checkCart() {
   }
 }
 
-// const initApp = () => {
-//   let mainCart = checkCart();
-//   if (localStorage.getItem("shoppingCart")) {
-//     mainCart = JSON.parse(localStorage.getItem("shoppingCart"));
-//     addCartToHTML();
-//   }
-// };
+//calculate and render subtotal
+
+function renderSubtotal() {
+  let totalPrice = 0,
+    totalItems = 0;
+
+  let basket = checkCart();
+
+  basket.forEach((item) => {
+    totalPrice += item.price * item.amount;
+    totalItems += item.amount;
+  });
+  subTotalEl.innerHTML = `Subtotal (${totalItems} items): Kr ${totalPrice}`;
+}
 
 export function initApp() {
   let mainCart = checkCart();
