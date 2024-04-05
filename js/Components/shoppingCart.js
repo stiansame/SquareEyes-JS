@@ -3,7 +3,8 @@
 import { resultsContainer } from "./getDetails.js";
 import { checkForDetails } from "./getDetails.js";
 
-let carts = [];
+let ItemsCartHTML = document.querySelector(".cartList");
+let cartIconCounter = document.querySelector("#counter");
 
 const iconCart = document.querySelector("#cart");
 const body = document.querySelector("body");
@@ -18,14 +19,85 @@ closeCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
 });
 
-resultsContainer.addEventListener("click", () => {
+resultsContainer.addEventListener("click", cartHandler, () => {
   let positionClick = event.target;
   if (positionClick.classList.contains("addToCart")) {
-    const mDetails = checkForDetails();
-    const movie_id = mDetails.id;
-    console.log("movie_id: ", movie_id);
-    addToCart(movie_id);
+    // addToCart(mDetails);
   }
 });
 
-const addToCart = (movie_id) => {};
+const addToCart = (mDetails) => {
+  localStorage.setItem("shoppingCart", JSON.stringify(mDetails));
+};
+
+function cartHandler() {
+  const mDetails = checkForDetails();
+
+  const id = mDetails.id;
+  const price = mDetails.discountedPrice;
+  const title = mDetails.title;
+  const cover = mDetails.image.url;
+  const amount = 1;
+
+  const existingCart = checkCart();
+
+  const itemExist = existingCart.find(function (item) {
+    return item.id === id;
+  });
+
+  if (!itemExist) {
+    const cartItem = {
+      id: id,
+      title: title,
+      price: price,
+      cover: cover,
+      amount: amount,
+    };
+    existingCart.push(cartItem);
+    addToCart(existingCart);
+  } else {
+    alert("item exists!");
+  }
+  addCartToHTML();
+}
+
+const addCartToHTML = () => {
+  let carts = checkCart();
+
+  ItemsCartHTML.innerHTML = "";
+  let totalQuantity = 0;
+  if (carts.length > 0) {
+    carts.forEach((cart) => {
+      totalQuantity = totalQuantity + cart.amount;
+      const newCart = document.createElement("div");
+      newCart.classList.add("cartItem");
+      newCart.innerHTML = `<div class="movie">
+                                <img src="${cart.cover}" alt="">
+                                </div>
+                                <div class="title">${cart.title}</div>
+                                <div class="price"><b>Price:</b>Kr ${cart.price}</div>
+                                `;
+      ItemsCartHTML.appendChild(newCart);
+    });
+  }
+  cartIconCounter.innerText = totalQuantity;
+};
+
+function checkCart() {
+  const currentCart = localStorage.getItem("shoppingCart");
+  if (!currentCart) {
+    return [];
+  } else {
+    return JSON.parse(currentCart);
+  }
+}
+
+const initApp = () => {
+  let mainCart = checkCart();
+  if (localStorage.getItem("shoppingCart")) {
+    mainCart = JSON.parse(localStorage.getItem("shoppingCart"));
+    addCartToHTML();
+  }
+};
+
+initApp();
