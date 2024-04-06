@@ -2,7 +2,7 @@
 import { url } from "../script.js";
 
 //GET ELEMENTS
-const addToCartParentEL = document.querySelector(".description-container");
+const addToCartParentEL = document.querySelector(".cartFunction");
 const cartEl = document.querySelector("#cart");
 const bodyEl = document.querySelector("body");
 const closeEL = document.querySelector(".cartTab .close");
@@ -15,28 +15,67 @@ let products = [];
 let cartItems = [];
 
 //EVENT LISTENERS
+//cart-toggle
 cartEl.addEventListener("click", () => {
-  //cart-toggle
   bodyEl.classList.toggle("showCart");
   renderTotal();
 });
-
+//close cart
 closeEL.addEventListener("click", () => {
-  //close cart
   bodyEl.classList.toggle("showCart");
 });
-
+//add to cart
 addToCartParentEL.addEventListener("click", (event) => {
-  //add to cart
   let locateClick = event.target;
   if (locateClick.classList.contains("PushToCart")) {
-    const product_id = locateClick.parentElement.dataset.id;
-    console.log("p_id: ", product_id);
+    let product_id = locateClick.parentElement.dataset.id;
     placeInCart(product_id);
   }
 });
 
-//ADD TO PRODUCT LIST
+//remove from cart
+listCartHTML.addEventListener("click", (event) => {
+  let positionClick = event.target;
+  if (
+    positionClick.classList.contains("minus") ||
+    positionClick.classList.contains("plus")
+  ) {
+    let product_id = positionClick.parentElement.parentElement.dataset.id;
+    let type = "minus";
+    if (positionClick.classList.contains("plus")) {
+      type = "plus";
+    }
+    removeFromCart(product_id, type);
+  }
+});
+
+//REMOVE FROM CART
+const removeFromCart = (product_id, type) => {
+  let positionItemInCart = cartItems.findIndex(
+    (value) => value.product_id == product_id
+  );
+  if (positionItemInCart >= 0) {
+    let info = cartItems[positionItemInCart];
+    switch (type) {
+      case "plus":
+        cartItems[positionItemInCart].quantity =
+          cartItems[positionItemInCart].quantity + 1;
+        break;
+
+      default:
+        let changeQuantity = cartItems[positionItemInCart].quantity - 1;
+        if (changeQuantity > 0) {
+          cartItems[positionItemInCart].quantity = changeQuantity;
+        } else {
+          cartItems.splice(positionItemInCart, 1);
+        }
+        break;
+    }
+  }
+  renderCart();
+  addCartToStorage();
+  renderTotal();
+};
 
 //ADD TO CART
 
@@ -61,6 +100,7 @@ const placeInCart = (product_id) => {
   }
   renderCart();
   addCartToStorage();
+  renderTotal();
 };
 
 //ADD CART TO LOCALSTORAGE
@@ -77,12 +117,14 @@ const renderCart = () => {
       totalQuantity = totalQuantity + cartItems.quantity;
       const newCart = document.createElement("div");
       newCart.classList.add("cartItem");
+      newCart.dataset.id = cartItems.product_id;
       let positionProduct = products.findIndex(
         (vv) => vv.id === cartItems.product_id
       );
       let info = products[positionProduct];
       newCart.innerHTML = `<div class="movie">
                                 <img src="${info.image.url}" alt="">
+                                <div class="minus"> X </div>
                                 </div>
                                 <div class="title">${info.title}</div>
                                 <div class="price"><b>Price:</b>Kr ${info.discountedPrice}</div>
@@ -91,10 +133,9 @@ const renderCart = () => {
     });
   }
   cartCounter.innerText = totalQuantity;
-  console.log("incart: ", cartItems);
 };
 
-//CALC AND REDER SUBTOTAL
+//CALC AND RENDER SUBTOTAL
 function renderTotal() {
   let tPrice = 0,
     tItems = 0;
@@ -110,7 +151,7 @@ function renderTotal() {
   calTotalEl.innerHTML = `Subtotal (${tItems} items): Kr ${tPrice.toFixed(2)}`;
 }
 
-async function initialize() {
+export async function initialize() {
   const apiCall = await fetch(url);
   const apiJSON = await apiCall.json();
   const apiProducts = apiJSON.data;
@@ -121,7 +162,7 @@ async function initialize() {
     cartItems = JSON.parse(localStorage.getItem("inCart"));
     renderCart();
   }
-  console.log("apiProducts: ", apiProducts);
+  //   console.log("apiProducts: ", apiProducts);
 }
 
 initialize();

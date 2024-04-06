@@ -1,6 +1,6 @@
 //Imports Here!
 import { createMessage } from "./Components/Message.js";
-import { initApp } from "./Components/shoppingCart.js";
+import { initialize } from "./Components/app.js";
 
 //URL for API-call
 export const url = "https://v2.api.noroff.dev/square-eyes";
@@ -12,5 +12,4 @@ export const favouritesContainer = document.querySelector(".favourites");
 //Display message
 export const message = createMessage();
 
-
-initApp();
+initialize();
