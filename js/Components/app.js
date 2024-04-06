@@ -123,12 +123,13 @@ const renderCart = () => {
       );
       let info = products[positionProduct];
       newCart.innerHTML = `<div class="movie">
-                                <img src="${info.image.url}" alt="">
-                                <div class="minus"> X </div>
-                                </div>
-                                <div class="title">${info.title}</div>
-                                <div class="price"><b>Price:</b>Kr ${info.discountedPrice}</div>
-                                `;
+                          <a href ="../pages/movie_details2.html?id=${info.id}">   
+                          <img src="${info.image.url}" alt=""></a>
+                          <div class="minus"> X </div>
+                          </div>
+                          <div class="title">${info.title}</div>
+                          <div class="price"><b>Price:</b>Kr ${info.discountedPrice}</div>
+                          `;
       listCartHTML.appendChild(newCart);
     });
   }

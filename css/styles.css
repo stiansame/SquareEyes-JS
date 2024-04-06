@@ -424,8 +424,18 @@ body.showCart .cartTab {
   cursor: pointer;
 }
 
+.cartTab .cartBtn button:hover {
+  color: #168ed9;
+  background-color: #e6eef2;
+}
+
 .cartTab .cartBtn .close {
   background-color: #e2520f;
+}
+
+.cartTab .cartBtn .close:hover {
+  color: #e2520f;
+  background-color: #e6eef2;
 }
 
 .cartTab .cartItem {
