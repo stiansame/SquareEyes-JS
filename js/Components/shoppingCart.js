@@ -12,21 +12,21 @@ const closeCart = document.querySelector(".cartTab .close");
 const cartBtn = document.querySelector("#PushToCart");
 const subTotalEl = document.querySelector(".subTotal");
 
-iconCart.addEventListener("click", () => {
-  body.classList.toggle("showCart");
-  renderSubtotal();
-});
+// iconCart.addEventListener("click", () => {
+//   body.classList.toggle("showCart");
+//   renderSubtotal();
+// });
 
-closeCart.addEventListener("click", () => {
-  body.classList.toggle("showCart");
-});
+// closeCart.addEventListener("click", () => {
+//   body.classList.toggle("showCart");
+// });
 
-movieDetails.addEventListener("click", (event) => {
-  let positionClick = event.target;
-  if (positionClick.classList.contains("PushToCart")) {
-    cartHandler();
-  }
-});
+// movieDetails.addEventListener("click", (event) => {
+//   let positionClick = event.target;
+//   if (positionClick.classList.contains("PushToCart")) {
+//     cartHandler();
+//   }
+// });
 
 const addToCart = (mDetails) => {
   localStorage.setItem("shoppingCart", JSON.stringify(mDetails));
@@ -82,7 +82,7 @@ const addCartToHTML = () => {
       ItemsCartHTML.appendChild(newCart);
     });
   }
-  cartIconCounter.innerText = totalQuantity;
+  // cartIconCounter.innerText = totalQuantity;
 };
 
 function checkCart() {
