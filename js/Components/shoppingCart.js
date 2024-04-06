@@ -25,7 +25,6 @@ movieDetails.addEventListener("click", (event) => {
   let positionClick = event.target;
   if (positionClick.classList.contains("PushToCart")) {
     cartHandler();
-
   }
 });
 
