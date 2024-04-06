@@ -47,7 +47,7 @@ export async function getMovies() {
   }
 
   getFavs();
-  getLibrary();
+  // getLibrary();
 }
 
 await getMovies();

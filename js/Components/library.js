@@ -1,6 +1,6 @@
 import { getExistingFavs } from "./favFunctions.js";
 
-import { libraryContainer } from "../script.js";
+// import { libraryContainer } from "../script.js";
 import { handleClick } from "./favFunctions.js";
 
 export function getLibrary() {
