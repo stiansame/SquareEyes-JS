@@ -1,5 +1,6 @@
 import { getFavs } from "./favourites.js";
 import { getMovies } from "./getmovies.js";
+// import { getLibrary } from "./library.js";
 
 export function getExistingFavs() {
   const favs = localStorage.getItem("favourites");
@@ -39,4 +40,5 @@ function saveFavs(favs) {
   localStorage.setItem("favourites", JSON.stringify(favs));
   getFavs();
   getMovies();
+  // getLibrary();
 }

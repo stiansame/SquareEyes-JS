@@ -6,6 +6,7 @@ import { url } from "../script.js";
 import { getExistingFavs } from "./favFunctions.js";
 import { handleClick } from "./favFunctions.js";
 import { getFavs } from "./favourites.js";
+// import { getLibrary } from "./library.js";
 
 //Call the API to get all the movies
 export async function getMovies() {
@@ -46,6 +47,7 @@ export async function getMovies() {
   }
 
   getFavs();
+  getLibrary();
 }
 
 await getMovies();
