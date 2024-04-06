@@ -48,6 +48,4 @@ export async function getMovies() {
   getFavs();
 }
 
-setTimeout(function () {
-  getMovies();
-}, 500);
+await getMovies();

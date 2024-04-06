@@ -838,7 +838,7 @@ footer img:hover {
   height: 12px;
   border-radius: 20px;
   background: #168ed9;
-  animation: fetching 700ms forwards cubic-bezier(0, 0, 0, 0);
+  animation: fetching 200ms forwards cubic-bezier(0, 0, 0, 0);
 }
 
 @keyframes fetching {
