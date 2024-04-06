@@ -6,7 +6,7 @@ const addToCartParentEL = document.querySelector(".cartFunction");
 const cartEl = document.querySelector("#cart");
 const bodyEl = document.querySelector("body");
 const closeEL = document.querySelector(".cartTab .close");
-const addToCartEl = document.querySelector(".pushToCart");
+const goToCheckOut = document.querySelector(".checkOut");
 const calTotalEl = document.querySelector(".subTotal");
 
 let listCartHTML = document.querySelector(".cartList");
@@ -15,6 +15,16 @@ let products = [];
 let cartItems = [];
 
 //EVENT LISTENERS
+
+//goToCheckout
+goToCheckOut.addEventListener("click", () => {
+  checkOutPage();
+});
+
+function checkOutPage() {
+  window.location.href = "../../pages/checkout.html";
+}
+
 //cart-toggle
 cartEl.addEventListener("click", () => {
   bodyEl.classList.toggle("showCart");
