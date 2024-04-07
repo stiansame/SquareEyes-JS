@@ -7,8 +7,11 @@ const addToCartParentEL = document.querySelector(".cartFunction");
 const cartEl = document.querySelector("#cart");
 const bodyEl = document.querySelector("body");
 const closeEL = document.querySelector(".cartTab .close");
-const goToCheckOut = document.querySelector(".checkOut");
 const calTotalEl = document.querySelector(".subTotal");
+
+const checkOutBtn = document.querySelector("#CO");
+checkOutBtn.disabled = true;
+checkOutBtn.classList.add("disabled");
 
 let listCartHTML = document.querySelector(".cartList");
 let cartCounter = document.querySelector("#counter");
@@ -86,6 +89,7 @@ const removeFromCart = (product_id, type) => {
   renderCart();
   addCartToStorage();
   renderTotal();
+  disableCheckOut();
 };
 
 //ADD TO CART
@@ -109,6 +113,7 @@ const placeInCart = (product_id) => {
   } else {
     alert("Product is already in cart!");
   }
+  disableCheckOut();
   renderCart();
   addCartToStorage();
   renderTotal();
@@ -161,6 +166,14 @@ function renderTotal() {
   });
 
   calTotalEl.innerHTML = `Subtotal (${tItems} items): Kr ${tPrice.toFixed(2)}`;
+}
+
+function disableCheckOut() {
+  console.log(cartItems);
+  if (cartItems.length > 0) {
+    checkOutBtn.disabled = false;
+    checkOutBtn.classList.toggle("disabled");
+  }
 }
 
 export async function initialize() {

@@ -424,6 +424,11 @@ body.showCart .cartTab {
   cursor: pointer;
 }
 
+.cartTab .cartBtn .disabled {
+  background-color: lightgrey;
+  cursor: not-allowed;
+}
+
 .cartTab .cartBtn button:hover {
   color: #168ed9;
   background-color: #e6eef2;
