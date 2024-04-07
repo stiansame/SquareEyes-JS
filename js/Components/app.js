@@ -33,6 +33,7 @@ let cartItems = [];
 cartEl.addEventListener("click", () => {
   bodyEl.classList.toggle("showCart");
   renderTotal();
+  disableCheckOut();
 });
 //close cart
 closeEL.addEventListener("click", () => {
@@ -86,10 +87,10 @@ const removeFromCart = (product_id, type) => {
         break;
     }
   }
+  disableCheckOut();
   renderCart();
   addCartToStorage();
   renderTotal();
-  disableCheckOut();
 };
 
 //ADD TO CART
@@ -113,7 +114,6 @@ const placeInCart = (product_id) => {
   } else {
     alert("Product is already in cart!");
   }
-  disableCheckOut();
   renderCart();
   addCartToStorage();
   renderTotal();
@@ -169,8 +169,10 @@ function renderTotal() {
 }
 
 function disableCheckOut() {
-  console.log(cartItems);
-  if (cartItems.length > 0) {
+  let getArray = JSON.parse(localStorage.getItem("inCart"));
+  console.log(getArray.length);
+
+  if (getArray.length > 0) {
     checkOutBtn.disabled = false;
     checkOutBtn.classList.toggle("disabled");
   }
