@@ -33,6 +33,7 @@ let cartItems = [];
 cartEl.addEventListener("click", () => {
   bodyEl.classList.toggle("showCart");
   renderTotal();
+  disableCheckOut();
 });
 //close cart
 closeEL.addEventListener("click", () => {
