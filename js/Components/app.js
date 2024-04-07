@@ -1,7 +1,8 @@
 //iMPORTS
-import { url } from "../script.js";
+// import { url } from "../script.js";
 
 //GET ELEMENTS
+const apiUrl = "https://v2.api.noroff.dev/square-eyes";
 const addToCartParentEL = document.querySelector(".cartFunction");
 const cartEl = document.querySelector("#cart");
 const bodyEl = document.querySelector("body");
@@ -163,7 +164,7 @@ function renderTotal() {
 }
 
 export async function initialize() {
-  const apiCall = await fetch(url);
+  const apiCall = await fetch(apiUrl);
   const apiJSON = await apiCall.json();
   const apiProducts = apiJSON.data;
   products = apiProducts;
