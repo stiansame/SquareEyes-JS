@@ -1,7 +1,7 @@
-import { getExistingFavs } from "./favFunctions.js";
+import { getExistingFavs } from "../favFunctions.js";
 
 // import { libraryContainer } from "../script.js";
-import { handleClick } from "./favFunctions.js";
+import { handleClick } from "../favFunctions.js";
 
 export function getLibrary() {
   const favourites = getExistingFavs();

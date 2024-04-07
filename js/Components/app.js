@@ -16,14 +16,14 @@ let cartItems = [];
 
 //EVENT LISTENERS
 
-//goToCheckout
-goToCheckOut.addEventListener("click", () => {
-  checkOutPage();
-});
+//goToCheckout - Not enough time to write functionality to get items from shopping cart to check-out. Probably simple, but not enough time to figure it out.
+// goToCheckOut.addEventListener("click", () => {
+//   checkOutPage();
+// });
 
-function checkOutPage() {
-  window.location.href = "../../pages/checkout.html";
-}
+// function checkOutPage() {
+//   window.location.href = "../../pages/checkout.html";
+// }
 
 //cart-toggle
 cartEl.addEventListener("click", () => {
