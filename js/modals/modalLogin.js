@@ -10,7 +10,6 @@ function getCurrentURL() {
 }
 
 let thisUrl = getCurrentURL();
-console.log(thisUrl);
 
 //EVENT LISTENERS
 loginBtn.addEventListener("click", () => {
@@ -25,7 +24,7 @@ logoutButton.addEventListener("click", () => {
   renderLogoutModal();
 });
 
-if ((thisUrl = "/pages/register.html")) {
+if (thisUrl === "/pages/register.html") {
   openWelcomeModal.addEventListener("click", () => {
     renderWelcomeModal();
   });
