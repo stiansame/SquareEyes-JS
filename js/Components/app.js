@@ -171,7 +171,6 @@ function renderTotal() {
 //ENABLE / DISABLE CHECK-OUT BUTTON
 function disableCheckOut() {
   let getArray = JSON.parse(localStorage.getItem("inCart"));
-  console.log(getArray.length);
 
   if (getArray.length <= 0) {
     checkOutBtn.disabled = true;
