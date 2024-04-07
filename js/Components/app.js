@@ -33,7 +33,6 @@ let cartItems = [];
 cartEl.addEventListener("click", () => {
   bodyEl.classList.toggle("showCart");
   renderTotal();
-  disableCheckOut();
 });
 //close cart
 closeEL.addEventListener("click", () => {
@@ -87,10 +86,10 @@ const removeFromCart = (product_id, type) => {
         break;
     }
   }
-  disableCheckOut();
   renderCart();
   addCartToStorage();
   renderTotal();
+  disableCheckOut();
 };
 
 //ADD TO CART
@@ -117,6 +116,7 @@ const placeInCart = (product_id) => {
   renderCart();
   addCartToStorage();
   renderTotal();
+  disableCheckOut();
 };
 
 //ADD CART TO LOCALSTORAGE
@@ -168,13 +168,17 @@ function renderTotal() {
   calTotalEl.innerHTML = `Subtotal (${tItems} items): Kr ${tPrice.toFixed(2)}`;
 }
 
+//ENABLE / DISABLE CHECK-OUT BUTTON
 function disableCheckOut() {
   let getArray = JSON.parse(localStorage.getItem("inCart"));
   console.log(getArray.length);
 
-  if (getArray.length > 0) {
+  if (getArray.length <= 0) {
+    checkOutBtn.disabled = true;
+    checkOutBtn.classList.add("disabled");
+  } else if (getArray.length > 0) {
     checkOutBtn.disabled = false;
-    checkOutBtn.classList.toggle("disabled");
+    checkOutBtn.classList.remove("disabled");
   }
 }
 
